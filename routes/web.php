@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('holi', fn() => "<h1>Holi</h1>");
+
+Route::get("pagina", [MainController::class, "index"]);
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::view("web", "web");
+
+Route::view("about", "inicio/about");
+Route::view("contacta", "inicio/contacta");
+Route::view("principal", "inicio/principal");
+Route::view("proyectos", "inicio/proyectos");
